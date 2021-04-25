@@ -56,7 +56,13 @@ class LanguageController extends Controller
     {
        
        try {  
- 
+          
+
+            if(!$request->has('active')){
+               $request->request->add(['active'=>'0']);
+            } 
+           
+
             Language::where('id',$request->id)->update($request->except('_token'));
           
             return redirect('/admin/language/')->with('success','تمت تعديل اللغة بنجاح');

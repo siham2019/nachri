@@ -38,7 +38,7 @@
             </div>
            <div class="custom-control custom-switch">
 
-            <input type="checkbox" class="custom-control-input" id="switch1" name="active" value="{{$language->active}}"  {{$language->active=='1'?'checked':''}}>
+            <input type="checkbox" class="custom-control-input" id="switch1" name="active" value="1"  {{$language->active=='1'?'checked':''}}>
             <label class="custom-control-label" for="switch1">مفعلة</label>
              @error('active')
                <p>{{$message}}</p>
@@ -60,34 +60,6 @@
 
     </div>
         
-    <script>
-        let checkbox= document.getElementById("switch1")
-
-        checkbox.addEventListener('change',function (event) {
-            if ( checkbox.checked) {
-                checkbox.value = '1'
-            
-            }
-            else{
-               checkbox.value = '0'
-           
-              
-            }
-
-        })
-
-      let submit= document.getElementById("submit")
-           
-           submit.addEventListener('click',function (event) {
-            checkbox.checked=true;
-           })
-
-
-
-
-
-    </script>
-
-
+ 
 @endsection
     

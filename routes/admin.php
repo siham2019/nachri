@@ -11,7 +11,7 @@ Route::get('/login', function () {
 
 Route::post('/login', 'App\Http\Controllers\adminController@login');
 
-Route::middleware(['auth:admin'])->group(function () {
+Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'auth:admin'],function () {
     
     Route::get('/dashboard', function () {
         return view('admin.auth.dashboard');
@@ -30,7 +30,7 @@ Route::middleware(['auth:admin'])->group(function () {
 
 
 
-  Route::group(['prefix'=>'language','namespace'=>'App\Http\Controllers'],function () {
+  Route::group(['prefix'=>'language'],function () {
        
       Route::get('/', 'LanguageController@index');
       
@@ -42,6 +42,34 @@ Route::middleware(['auth:admin'])->group(function () {
 
       Route::get('/destroy/{id}','LanguageController@delete');
   });
+
+
+/* #################################################################################
+   #                               main categorie                                   #
+   #                                            routes                              #
+   #################################################################################
+*/
+
+
+
+
+Route::group(['prefix'=>'main-categorie'],function () {
+       
+    Route::get('/', 'MainCategorie@index');
+    
+ 
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 });

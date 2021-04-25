@@ -16,6 +16,7 @@
           <h3>welcome to dashboard</h3>
           <div class="d-flex justify-content-center ">
             <a href="/admin/language/" class="mr-2"> {{-- ({{ Language::count() }}) --}}لغات الموقع</a>
+            <a href="/admin/main-categorie/" class="mr-2">اقسام الرئيسية  للموقع</a>
            <a href="/admin/logout">logout</a>
           </div>
    </div>
