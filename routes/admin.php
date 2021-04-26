@@ -55,9 +55,10 @@ Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'auth:admin'],fu
 
 Route::group(['prefix'=>'main-categorie'],function () {
        
-    Route::get('/', 'MainCategorie@index');
-    
- 
+    Route::get('/', 'MainCategorieController@index');
+    Route::get('/add','MainCategorieController@create');
+    Route::post('/add','MainCategorieController@store')->name('categorie.store');
+
 });
 
 

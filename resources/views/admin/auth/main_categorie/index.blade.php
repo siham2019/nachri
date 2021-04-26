@@ -11,7 +11,7 @@
 
 
     <div class="container">
-        <a href="/admin/language/add">اضافة القسم الرشيسي</a>
+        <a href="/admin/main-categorie/add">اضافة القسم الرشيسي</a>
         @include('alert.success')
         @include('alert.error')
         <table border="1">
@@ -25,20 +25,25 @@
              <tbody>
 
                      @foreach ($categories as $category)
-                         
-                     @endforeach
                      <tr>
-                         <td></td>
-                         <td></td>
-                         <td></td>
-                         <td></td>
-                         <td>
-                             <div class="d-flex">
-                                 <a href="/admin/main-categorie/edit/">تعديل</a>
-                                 <a href="/admin/main-categorie/destroy/">الحذف</a>
-                             </div>
-                         </td>
-                     </tr>
+                        <td>{{$category->name}}</td>
+                        <td>{{$category->active}}</td>
+                        <td>{{$category->translate_lang}}</td>
+                        
+                        <td>
+                            <img src={{url($category->photo)}} alt="{{$category->slug}}" style="width:100px;height:100px">
+                        </td>
+
+                        <td>
+                            <div class="d-flex">
+                                <a href="/admin/main-categorie/edit/{{$category->id}}">تعديل</a>
+                                <a href="/admin/main-categorie/destroy/{{$category->id}}">الحذف</a>
+                            </div>
+                        </td>
+
+                    </tr>
+                     @endforeach
+                    
  
 
              </tbody>
