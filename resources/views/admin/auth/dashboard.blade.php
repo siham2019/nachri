@@ -22,6 +22,13 @@
    </div>
 
 
+   <form action="/photo/save" enctype="multipart/form-data" method="POST">
+      @csrf
+      <label for="photo">photo</label>
+      <input type="file" name="h" id="photo">
+      <button type="submit">submit</button>
+   </form>
+
 
 
 

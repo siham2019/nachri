@@ -17,6 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::post('/photo/save','App\Http\Controllers\PhotoController@save');
+
 
 Route::get('/login', function () {
     return view('login');
