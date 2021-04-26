@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Route::post('/photo/save','App\Http\Controllers\PhotoController@save');
+Route::get('/dockters', 'App\Http\Controllers\DocktorController@get');
+Route::get('/store', 'App\Http\Controllers\DocktorController@store');
 
 
 Route::get('/login', function () {
