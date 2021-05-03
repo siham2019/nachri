@@ -12,3 +12,18 @@ function getActiveLanguage()
 {
     return Language::where('active','1')->get();
 }
+
+
+function uploadImage($h,$path)
+{
+    $extension = $h->getClientOriginalExtension();
+    $filename = time().'.'.$extension;
+    $h->move($path,$filename);
+
+    return $path.$filename;
+
+}
+
+
+
+

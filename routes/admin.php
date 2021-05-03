@@ -57,14 +57,44 @@ Route::group(['namespace'=>'App\Http\Controllers','middleware'=>'auth:admin'],fu
 Route::group(['prefix'=>'main-categorie'],function () {
        
     Route::get('/', 'MainCategorieController@index');
+
     Route::get('/add','MainCategorieController@create');
     Route::post('/add','MainCategorieController@store')->name('categorie.store');
+
+    Route::get('/edit/{id}','MainCategorieController@edit');
+   Route::post('/update/{id}', 'MainCategorieController@update')->name('categorie.update');
+
+   Route::get('/destroy/{id}', 'MainCategorieController@destroy');
+   
+   Route::get('/change/{id}', 'MainCategorieController@change');
 
 });
 
 
 
 
+
+/* #################################################################################
+   #                               main categorie                                   #
+   #                                            routes                              #
+   #################################################################################
+*/
+
+
+
+
+Route::group(['prefix'=>'vendors'],function () {
+       
+    Route::get('/', 'VendorController@index');
+
+    Route::get('/add','VendorController@create');
+    Route::post('/add','VendorController@store')->name('vendor.store');
+
+    Route::get('/edit/{id}','VendorController@edit');
+   Route::post('/update/{id}', 'VendorController@update')->name('vendor.update');
+
+
+});
 
 
 

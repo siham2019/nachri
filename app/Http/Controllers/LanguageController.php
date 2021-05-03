@@ -25,8 +25,8 @@ class LanguageController extends Controller
          $active =$request->active==1?'1':'0';
 
 
-      try { 
-            
+/*       try { 
+ */            
             $language=new Language();   
      
             $language->name=$request->name;
@@ -38,11 +38,11 @@ class LanguageController extends Controller
 
             return redirect('/admin/language/')->with('success','تمت اضافة اللغة بنجاح');
 
-       } catch (\Exception $th) {
+ /*       } catch (\Exception $th) {
 
             return back()->with('error','حدث خطأ ما يرجى اعادة المحاولة لاحقا');
          
-        } 
+        }  */
   
     }
 

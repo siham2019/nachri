@@ -34,7 +34,7 @@
                 <div class="form-group">
                   
                     <label for="translate_lang"> اختصار اللغة</label>
-                    <input type="text" name="category[{{$index}}][translate_lang]" id="translate_lang" class="form-control" placeholder="الاختصار" >
+                    <input  name="category[{{$index}}][translate_lang]" type="hidden" id="translate_lang" value="{{$language->abbr}}"  class="form-control" placeholder="الاختصار" >
                     
                     @error("category.$index.translate_lang")
                          <p class="text-danger"> {{$message}}</p>

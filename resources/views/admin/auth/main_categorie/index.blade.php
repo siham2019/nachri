@@ -37,6 +37,7 @@
                         <td>
                             <div class="d-flex">
                                 <a href="/admin/main-categorie/edit/{{$category->id}}">تعديل</a>
+                                <a href="/admin/main-categorie/change/{{$category->id}}">{{$category->active=='1'?'الغاء تفعيل':'تفعيل'}}</a>
                                 <a href="/admin/main-categorie/destroy/{{$category->id}}">الحذف</a>
                             </div>
                         </td>

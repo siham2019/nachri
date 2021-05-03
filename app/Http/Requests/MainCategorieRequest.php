@@ -26,9 +26,9 @@ class MainCategorieRequest extends FormRequest
         return [
            "category"=>'required|array|min:1',
            "category.*.name"=>'required|string|max:100',
-           "category.*.active"=>'required|in:0,1' ,
+           "category.*.active"=>'required_without:id|in:0,1' ,
            "category.*.translate_lang"=>'required|string|max:5',
-           "photo"=>"required|mimes:jpg,gif,png"
+           "photo"=>"required_without:id|mimes:jpg,gif,png"
         ];
     }
 
